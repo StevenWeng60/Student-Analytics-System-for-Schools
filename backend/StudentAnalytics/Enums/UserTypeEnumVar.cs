@@ -1,6 +1,6 @@
 namespace StudentAnalytics.Enums
 {
-    public enum UserType
+    public enum UserTypeEnumVar
     {
         teacher,
         admin,

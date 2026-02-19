@@ -13,7 +13,7 @@ public partial class Class
 
     public string ClassName { get; set; } = null!;
 
-    public string? Subject { get; set; }
+    public string Subject { get; set; } = null!;
 
     public ushort Period { get; set; }
 

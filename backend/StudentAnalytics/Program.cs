@@ -1,5 +1,7 @@
 using Microsoft.EntityFrameworkCore;
 using StudentAnalytics.Context;
+using Microsoft.AspNetCore.Identity;
+using StudentAnalytics.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,7 @@ builder.Services.AddOpenApi();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddScoped<IPasswordHasher<UserController>, PasswordHasher<UserController>>();
 
 var dbPassword = Environment.GetEnvironmentVariable("DB_PASSWORD", EnvironmentVariableTarget.User)
     ?? throw new InvalidOperationException("Database password not found in environment variables.");

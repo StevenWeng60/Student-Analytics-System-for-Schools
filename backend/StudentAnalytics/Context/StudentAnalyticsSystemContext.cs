@@ -344,6 +344,7 @@ public partial class StudentAnalyticsSystemContext : DbContext
 
             entity.HasOne(d => d.School).WithMany(p => p.Users)
                 .HasForeignKey(d => d.SchoolId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("users_ibfk_1");
         });
 
